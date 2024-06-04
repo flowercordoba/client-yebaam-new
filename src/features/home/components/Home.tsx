@@ -1,4 +1,11 @@
 import { FC, ReactElement } from 'react';
+import CreatePostHome from 'src/features/post/components/CreatePostHome';
+import ListStories from 'src/features/stories/components/ListStories';
+import SidebarLeft from 'src/shared/sidebar/SidebarLeft';
+import SidebarRight from 'src/shared/sidebar/SidebarRight';
+
+import ItemsMenuHeaderHome from './ItemsMenuHeaderHome';
+import ChatRooms from 'src/features/rooms/components/ListGridRoom';
 // import { ISellerGig } from 'src/features/gigs/interfaces/gig.interface';
 // import {
 //   useGetGigsByCategoryQuery,
@@ -47,23 +54,28 @@ const Home: FC = (): ReactElement => {
   // }, []);
 
   return (
-    <div className="m-auto px-6 w-screen relative min-h-screen xl:container md:px-12 lg:px-6">
-      HOME
-      {/* <HomeSlider /> */}
-      {/* {topGigs.length > 0 && (
-        <TopGigsView
-          gigs={topGigs}
-          title="Top rated services in"
-          subTitle={`Highest rated talents for all your ${lowerCase(topGigs[0].categories)} needs.`}
-          category={topGigs[0].categories}
-          width="w-72"
-          type="home"
-        />
-      )}
-      {categoryGigs.length > 0 && (
-        <HomeGigsView gigs={categoryGigs} title="Because you viewed a gig on" subTitle="" category={categoryGigs[0].categories} />
-      )}
-      <FeaturedExperts sellers={sellers} /> */}
+    // <MenuNavbar />
+    <div className="gap">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="row merged20" id="page-contents">
+              <div className="col-lg-3">
+                <SidebarLeft />
+              </div>
+              <div className="col-lg-6">
+                <ItemsMenuHeaderHome />
+                <ListStories />
+                <CreatePostHome />
+                <ChatRooms />
+              </div>
+              <div className="col-lg-3">
+                <SidebarRight />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,28 @@
+const NotificationsMessages = () => {
+  return (
+    <li>
+      {/* message */}
+      <a className="mesg-notif" href="#" title="Messages" data-toggle="tooltip">
+        <i>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-message-square"
+          >
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </i>
+      </a>
+      <span></span>
+    </li>
+  );
+};
+
+export default NotificationsMessages;

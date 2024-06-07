@@ -1,7 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable prettier/prettier */
 import React, { useEffect, useRef } from 'react';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 import ProfileInHeaderModalCoverImage from 'src/features/user/components/profile/ProfileInHeaderModalCoverImage';
+import { useAppDispatch } from 'src/store/store';
+
+import { applicationLogout } from '../utils/utils.service';
 
 
 interface SettingsModalProps {
@@ -12,11 +16,19 @@ interface SettingsModalProps {
 
 const SettingsModal: React.FC<SettingsModalProps> = ({ isVisible, onProfileClick, onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const navigate: NavigateFunction = useNavigate();
+  const dispatch = useAppDispatch();
 
   const handleClickOutside = (event: MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
       onClose();
     }
+  };
+  const onLogout = (): void => {
+    // if (setIsDropdownOpen) {
+    //   setIsDropdownOpen(false);
+    // }
+    applicationLogout(dispatch, navigate);
   };
 
   useEffect(() => {
@@ -42,7 +54,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isVisible, onProfileClick
           <ProfileInHeaderModalCoverImage />
         </button>
         <hr className="my-2" />
-        <ul>
+        <ul className='cursor-pointer'>
           <li className="flex items-center py-2">
             <i className="fas fa-cog"></i>
             <span className="ml-2">Configuración y privacidad</span>
@@ -53,7 +65,8 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isVisible, onProfileClick
           </li>
           <li className="flex items-center py-2 cursor-pointer">
             <i className="fas fa-sign-out-alt"></i>
-            <span className="ml-2">Cerrar sesión</span>
+            <span onClick={() => onLogout()} className="ml-2">Cerrar sesión</span>
+      
           </li>
         </ul>
       </div>

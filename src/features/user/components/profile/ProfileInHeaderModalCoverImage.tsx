@@ -27,10 +27,6 @@ const ProfileInHeaderModalCoverImage: React.FC = () => {
       console.error('authUser.uId is undefined');
     }
   };
-
-  // <img src={`${authUser.profilePicture}`} className="h-12 w-12 rounded-full object-cover"/>
-  // <div>
-  //   <p className="font-semibold">{authUser.username}</p>
   return (
     <div className="w-full">
       <div className="flex items-center space-x-2 mb-2" onClick={handleImageClick}>

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { ChangeEvent, FC, ReactElement, useState } from 'react';
 import { FaEye, FaEyeSlash, FaTimes } from 'react-icons/fa';
 import Alert from 'src/shared/alert/Alert';
@@ -22,8 +23,8 @@ const LoginModal: FC<IModalBgProps> = ({ onClose, onToggle, onTogglePassword }):
   const [alertMessage, setAlertMessage] = useState<string>('');
   const [passwordType, setPasswordType] = useState<string>('password');
   const [userInfo, setUserInfo] = useState<ISignInPayload>({
-    username: '',
-    password: ''
+    username: 'cendero',
+    password: 'dym123'
   });
   const dispatch = useAppDispatch();
   const [schemaValidation] = useAuthSchema({ schema: loginUserSchema, userInfo });

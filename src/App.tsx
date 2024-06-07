@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { FC, ReactElement, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';

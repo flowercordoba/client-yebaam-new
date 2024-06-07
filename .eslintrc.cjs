@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
 module.exports = {
   env: { browser: true, es2020: true, 'jest/globals': true },
   extends: [
@@ -17,16 +19,16 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react-refresh', 'simple-import-sort', 'jest', 'prettier'],
-  'settings': {
-    'react': {
-      'version': 'detect' // Automatically detect the react version
+  settings: {
+    react: {
+      version: 'detect' // Automatically detect the react version
     },
-    'jest': {
-      'version': 'detect',
-      'globalAliases': {
-        'describe': ['context'],
-        'fdescribe': ['fcontext'],
-        'xdescribe': ['xcontext']
+    jest: {
+      version: 'detect',
+      globalAliases: {
+        describe: ['context'],
+        fdescribe: ['fcontext'],
+        xdescribe: ['xcontext']
       }
     }
   },
@@ -35,18 +37,18 @@ module.exports = {
       'warn',
       {
         singleQuote: true,
-        semi: true,
+        semi: true
       }
     ],
     'react-refresh/only-export-components': 'warn',
-    'no-multiple-empty-lines': [2, { 'max': 2 }],
-    'semi': [2, 'always'],
-    'curly': ['warn'],
+    'no-multiple-empty-lines': [2, { max: 2 }],
+    semi: [2, 'always'],
+    curly: ['warn'],
     'prefer-template': ['warn'],
-    'space-before-function-paren': [0, {'anonymous': 'always', 'named': 'always'}],
-    'camelcase': 0,
+    'space-before-function-paren': [0, { anonymous: 'always', named: 'always' }],
+    camelcase: 0,
     'no-return-assign': 0,
-    'quotes': ['error', 'single'],
+    quotes: ['error', 'single'],
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -57,5 +59,5 @@ module.exports = {
     'import/newline-after-import': 'warn',
     'import/no-duplicates': 'warn',
     'import/no-named-as-default': 0
-  },
+  }
 };

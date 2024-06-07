@@ -1,9 +1,11 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
-import SharePostModal from './SharePostModal';
-
-import photoVideoImg from 'src/assets/images/image.png';
 import activityImg from 'src/assets/images/activity.png';
-import liveStreamImg from 'src/assets/images/live-stream.png';
+import photoVideoImg from 'src/assets/images/image.png';
+import { useAppSelector } from 'src/store/store';
+import { IReduxState } from 'src/store/store.interface';
+
+import SharePostModal from './SharePostModal';
 
 interface CreatePostModalProps {
   isOpen: boolean;
@@ -12,8 +14,9 @@ interface CreatePostModalProps {
 
 const CreatePostModal: React.FC<CreatePostModalProps> = ({ isOpen, onClose }) => {
   const [isSharePostOpen, setIsSharePostOpen] = useState(false);
+  const authUser = useAppSelector((state: IReduxState) => state.authUser);
 
-  if (!isOpen) return null;
+  if (!isOpen) {return null;}
 
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 flex items-center justify-center">
@@ -26,9 +29,9 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ isOpen, onClose }) =>
         </div>
         <div className="mb-4">
           <div className="flex items-center space-x-4 mb-2">
-            <img src="https://via.placeholder.com/40" alt="Profile" className="rounded-full" />
+            <img src={`${authUser.profilePicture}`} className="h-12 w-12 rounded-full object-cover"/>
             <div>
-              <p className="font-semibold">Flower Moreno</p>
+              <p className="font-semibold">{authUser.username}</p>
               <select className="border rounded p-1">
                 <option>Público</option>
                 <option>Amigos</option>
@@ -39,32 +42,29 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ isOpen, onClose }) =>
           <textarea
             className="w-full p-2 border rounded mb-4"
             rows={4}
-            placeholder="¿Qué estás pensando, Flower?"
-          />
+            placeholder={`¿Qué estás pensando, ${authUser.username}?`}
+            />
         </div>
         <div className="flex justify-between items-center">
           <div className="flex space-x-4">
           <ul className="upload-media">
           <li>
-            <a href="#" title="">
+            <a  title="">
               <i><img src={photoVideoImg} alt="Photo/Video" /></i>
               <span>Photo/Video</span>
             </a>
           </li>
           <li>
-            <a href="#" title="">
+            <a  title="">
               <i><img src={activityImg} alt="Feeling/Activity" /></i>
               <span>Feeling/Activity</span>
             </a>
           </li>
           <li>
-            <a href="live-stream.html" title="">
-              <i><img src={liveStreamImg} alt="Live Stream" /></i>
-              <span>Live Stream</span>
-            </a>
+      
           </li>
         </ul>
-         
+
           </div>
           <div className="flex space-x-2">
             <button

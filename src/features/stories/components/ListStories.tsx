@@ -1,13 +1,10 @@
-import React from 'react';
 import storycard5 from 'src/assets/images/resources/story-card5.jpg';
 
-import CreateStories from './CreateStories';
 
 const ListStories = () => {
   return (
     <div className="story-card">
       <div className="story-wraper">
-        <CreateStories />
       </div>
       <div className="story-wraper">
         <img src={storycard5} />

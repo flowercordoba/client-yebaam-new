@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Transition } from '@headlessui/react';
 import { FC, MouseEvent, ReactElement, useState } from 'react';
 import { FaAngleDown, FaAngleRight, FaAngleUp } from 'react-icons/fa';

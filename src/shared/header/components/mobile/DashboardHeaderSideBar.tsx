@@ -91,7 +91,7 @@ const DashboardHeaderSideBar: FC<IHeaderSideBarProps> = ({ setOpenSidebar }): Re
             }}
             className="cursor-pointer text-base font-medium text-gray-400"
           >
-            <Link to={`/${lowerCase(`${seller?.username}`)}/edit`}>Settings</Link>
+            <Link to={`/${lowerCase(`${seller?.username}`)}/edit`}>Settingsd</Link>
           </div>
           <div
             onClick={(event: MouseEvent) => {

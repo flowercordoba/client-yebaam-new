@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { FC, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { IOrderDocument, IOrderTableProps } from 'src/features/order/interfaces/order.interface';

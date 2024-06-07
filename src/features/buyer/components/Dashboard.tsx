@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { FC, ReactElement, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IOrderDocument } from 'src/features/order/interfaces/order.interface';

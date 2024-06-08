@@ -1,7 +1,8 @@
+/* eslint-disable simple-import-sort/imports */
 /* eslint-disable prettier/prettier */
-import { createSlice, createAsyncThunk, Slice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IAuthUser, IReduxAddAuthUser } from '../interfaces/auth.interface';
+import { IAuthUser, IReduxAddAuthUser } from 'src/features/auth/interfaces/auth.interface';
 import { initialAuthUserValues } from 'src/shared/utils/static-data';
 
 const initialValue: IAuthUser = initialAuthUserValues as IAuthUser;
@@ -13,7 +14,7 @@ export const fetchCurrentUser = createAsyncThunk('auth/fetchCurrentUser', async 
   return response.data.user;
 });
 
-const authSlice: Slice = createSlice({
+const authSlice = createSlice({
   name: 'auth',
   initialState: {
     user: initialValue,

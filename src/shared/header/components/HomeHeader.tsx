@@ -1,10 +1,10 @@
+/* eslint-disable simple-import-sort/imports */
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Transition } from '@headlessui/react';
 import { filter, find } from 'lodash';
 import { FC, ReactElement, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { addAuthUser } from 'src/features/auth/reducers/auth.reducer';
 
 import SearchBtnHeader from 'src/features/search/SearchBtnHeader';
 import useDetectOutsideClick from 'src/shared/hooks/useDetectOutsideClick';

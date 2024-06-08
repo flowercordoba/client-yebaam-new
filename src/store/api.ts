@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { BaseQueryFn, createApi, FetchArgs, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react';
 import { getDataFromSessionStorage } from 'src/shared/utils/utils.service';
 
@@ -28,3 +29,5 @@ export const api = createApi({
   tagTypes: ['Auth', 'Currentuser', 'Buyer', 'Seller', 'Chat', 'Checkout', 'Gigs', 'Search', 'Review', 'Order', 'Notification'],
   endpoints: () => ({})
 });
+
+

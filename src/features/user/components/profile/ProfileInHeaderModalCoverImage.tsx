@@ -20,11 +20,11 @@ const ProfileInHeaderModalCoverImage: React.FC = () => {
   ];
 
   const handleImageClick = () => {
-    if (authUser && authUser.uId) {
-      console.log(`Navigating to /user/${authUser.uId}`);
-      navigate(`/user/${authUser.uId}`);
+    if (authUser && authUser.username) {
+      console.log(`Navigating to /user/${authUser.username}`);
+      navigate(`/user/${authUser.username}`);
     } else {
-      console.error('authUser.uId is undefined');
+      console.error('authUser.username is undefined');
     }
   };
   return (

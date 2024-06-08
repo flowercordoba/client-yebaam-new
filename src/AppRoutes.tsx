@@ -7,6 +7,7 @@ import Error from './features/error/Error';
 import Home from './features/home/components/Home';
 import ProtectedRoute from './features/ProtectedRoute';
 import CreateStories from './features/stories/components/CreateStories';
+import UserProfile from './features/user/components/profile/UserProfile';
 
 const Layout = ({ backgroundColor = '#fff', children }: { backgroundColor: string; children: ReactNode }): JSX.Element => (
   <div style={{ backgroundColor }} className="flex flex-grow">
@@ -33,6 +34,19 @@ const AppRouter: FC = () => {
         </Suspense>
       )
     },
+    {
+      path: '/user/:username', // Nueva ruta dinámica para el perfil del usuario
+      element: (
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProtectedRoute>
+            <Layout backgroundColor="#ffffff">
+              <UserProfile />
+            </Layout>
+          </ProtectedRoute>
+        </Suspense>
+      )
+    },
+
     {
       path: '/stories/create',  // Declara la nueva ruta
       element: (

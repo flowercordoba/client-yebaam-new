@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { FC, ReactElement } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 import { ISellerGig } from 'src/features/gigs/interfaces/gig.interface';
